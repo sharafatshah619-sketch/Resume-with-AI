@@ -1,0 +1,6 @@
+{
+  "name": "ResumeAI Pro – AI Resume Maker",
+  "description": "Create a professional ATS-friendly resume with our AI Resume Maker. Build, customize and download your resume as a PDF in minutes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

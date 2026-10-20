@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Cover Letter Generator – ResumeAI Pro</title>
+  <meta name="description" content="Generate a customized, professional, and ATS-friendly cover letter in seconds with ResumeAI Pro. Tailored to your target job and company.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://resumeai-pro.com/ai-cover-letter.html">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span>📄 ResumeAI</span><span class="logo-badge">PRO</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/create-resume.html" class="nav-link">Create Resume</a></li>
+          <li><a href="/templates.html" class="nav-link">Templates</a></li>
+          <li><a href="/ai-cover-letter.html" class="nav-link active">AI Cover Letter</a></li>
+          <li><a href="/resume-tips.html" class="nav-link">Resume Tips</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="/create-resume.html" class="btn btn-primary btn-sm header-cta-btn">Create Resume Free</a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="padding: 3.5rem 0 2.5rem;">
+    <div class="container text-center">
+      <span class="section-tag">✨ Instant Job Match</span>
+      <h1>AI Cover Letter Generator</h1>
+      <p class="subtitle">Draft a persuasive, customized cover letter that connects your background directly to your target employer.</p>
+    </div>
+  </section>
+
+  <!-- Cover Letter Tool -->
+  <main class="section">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: start; gap: 2rem;">
+
+        <!-- Input Form -->
+        <div class="form-card">
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Cover Letter Details</h2>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Tell our AI about the position and your key strengths.</p>
+
+          <form id="cover-letter-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="cl-candidate-name">Your Full Name <span class="required">*</span></label>
+                <input type="text" id="cl-candidate-name" class="form-input" placeholder="e.g. Marcus Vance" value="Marcus Vance" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cl-target-job">Target Job Title <span class="required">*</span></label>
+                <input type="text" id="cl-target-job" class="form-input" placeholder="e.g. CCTV Operator" value="CCTV Operator" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="cl-company-name">Company / Organization <span class="required">*</span></label>
+                <input type="text" id="cl-company-name" class="form-input" placeholder="e.g. Metro Transit Authority" value="Metro Transit Authority" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cl-hiring-manager">Hiring Manager (Optional)</label>
+                <input type="text" id="cl-hiring-manager" class="form-input" placeholder="e.g. Ms. Sarah Jenkins">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cl-skills">Key Skills & Core Strengths to Highlight</label>
+              <input type="text" id="cl-skills" class="form-input" placeholder="e.g. Milestone VMS, incident reporting, emergency response, attention to detail" value="Milestone VMS, CCTV monitoring, incident dispatch, video archiving">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cl-tone">Writing Tone</label>
+              <select id="cl-tone" class="form-select">
+                <option value="Professional & Direct">Professional & Direct (Recommended)</option>
+                <option value="Confident & Persuasive">Confident & Persuasive</option>
+                <option value="Entry-Level & Eager">Entry-Level & Eager to Learn</option>
+                <option value="Executive & Strategic">Executive & Strategic</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-ai btn-lg" id="generate-cl-btn" style="width: 100%; margin-top: 1rem;">
+              ✨ Generate AI Cover Letter
+            </button>
+          </form>
+        </div>
+
+        <!-- Output Card -->
+        <div class="form-card" style="background: #ffffff; min-height: 520px; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h2 style="font-size: 1.25rem;">Your Generated Cover Letter</h2>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="btn btn-sm btn-outline" id="copy-cl-btn">📋 Copy Text</button>
+              <button type="button" class="btn btn-sm btn-primary" id="print-cl-btn">🖨️ Print / PDF</button>
+            </div>
+          </div>
+
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <textarea id="cl-output-text" class="form-textarea" style="flex: 1; min-height: 380px; font-family: inherit; font-size: 0.95rem; line-height: 1.7; padding: 1rem;" placeholder="Your AI-generated cover letter will appear here ready to edit..."></textarea>
+          </div>
+
+          <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #64748b;">
+            <span id="cl-word-count">0 words</span>
+            <span>You can edit the text directly before copying.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 ResumeAI Pro. Professional career tools.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="/create-resume.html">Create Resume</a>
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/ai.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('cover-letter-form');
+      const outputText = document.getElementById('cl-output-text');
+      const generateBtn = document.getElementById('generate-cl-btn');
+      const copyBtn = document.getElementById('copy-cl-btn');
+      const printBtn = document.getElementById('print-cl-btn');
+      const wordCount = document.getElementById('cl-word-count');
+
+      // Populate sample cover letter on initial load
+      const initialLetter = `Dear Metro Transit Authority Hiring Team,\n\nI am writing to express my strong interest in the CCTV Operator position with the Metro Transit Authority. With over five years of dedicated experience overseeing high-security control room operations and managing multi-feed video surveillance networks, I am confident in my ability to immediately support your public safety and monitoring standards.\n\nThroughout my background, I have developed specialized expertise in real-time threat identification, Milestone VMS operations, and rapid dispatch coordination with municipal emergency services. In my current role, I actively oversee 120+ PTZ video streams, maintain 99.8% compliance audit ratings, and ensure strict chain of custody for digital video evidence.\n\nWhat excites me most about joining Metro Transit Authority is your unwavering commitment to transit rider security and rapid incident resolution. I look forward to discussing how my technical background, vigilance, and composure under pressure will deliver immediate value to your control room team.\n\nThank you for your time and consideration.\n\nSincerely,\nMarcus Vance\n+1 (555) 349-8201\nmarcus.vance@example.com`;
+      
+      outputText.value = initialLetter;
+      updateWordCount();
+
+      function updateWordCount() {
+        const text = outputText.value.trim();
+        const words = text ? text.split(/\s+/).length : 0;
+        wordCount.textContent = `${words} words`;
+      }
+
+      outputText.addEventListener('input', updateWordCount);
+
+      // Form submission for AI generation
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('cl-candidate-name').value;
+        const job = document.getElementById('cl-target-job').value;
+        const company = document.getElementById('cl-company-name').value;
+        const manager = document.getElementById('cl-hiring-manager').value;
+        const skills = document.getElementById('cl-skills').value;
+        const tone = document.getElementById('cl-tone').value;
+
+        await AIService.handleAIButtonAction(
+          generateBtn,
+          'cover_letter',
+          () => `Write a cover letter for ${job} at ${company} with tone ${tone}`,
+          () => ({
+            fullName: name,
+            targetJob: job,
+            companyName: company,
+            hiringManager: manager,
+            skills: skills,
+            tone: tone
+          }),
+          (result) => {
+            outputText.value = result;
+            updateWordCount();
+          }
+        );
+      });
+
+      // Copy text button
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(outputText.value);
+          Toast.success('Cover letter copied to clipboard!');
+        } catch (err) {
+          outputText.select();
+          document.execCommand('copy');
+          Toast.success('Cover letter copied!');
+        }
+      });
+
+      // Print button
+      printBtn.addEventListener('click', () => {
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Cover Letter - ${document.getElementById('cl-candidate-name').value}</title>
+            <style>
+              body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; font-size: 11pt; color: #1e293b; max-width: 650px; margin: 40px auto; padding: 20px; }
+              p { white-space: pre-line; }
+              @page { size: A4; margin: 20mm; }
+            </style>
+          </head>
+          <body>
+            <p>${outputText.value.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+            <script>window.onload = function() { window.print(); }<\/script>
+          </body>
+          </html>
+        `);
+        printWindow.document.close();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create ATS Resume – ResumeAI Pro Builder</title>
+  <meta name="description" content="Build an ATS-friendly professional resume step-by-step with real-time AI assistance, instant preview, and free PDF download.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://resumeai-pro.com/create-resume.html">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span>📄 ResumeAI</span><span class="logo-badge">PRO</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/create-resume.html" class="nav-link active">Create Resume</a></li>
+          <li><a href="/templates.html" class="nav-link">Templates</a></li>
+          <li><a href="/ai-cover-letter.html" class="nav-link">AI Cover Letter</a></li>
+          <li><a href="/resume-tips.html" class="nav-link">Resume Tips</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <button type="button" class="btn btn-outline btn-sm" id="load-sample-btn" title="Load sample resume">📥 Load Sample</button>
+        <button type="button" class="btn btn-primary btn-sm download-pdf-btn">Download PDF</button>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile View Toggle Bar -->
+  <div class="preview-toggle-bar">
+    <span style="font-size: 0.85rem; font-weight: 600; color: #475569;">Resume Builder Mode</span>
+    <button type="button" class="btn btn-sm btn-outline" id="toggle-mobile-preview-btn">👁️ Preview Resume</button>
+  </div>
+
+  <!-- Main Builder Container -->
+  <main class="container">
+    <div class="builder-layout view-editor">
+
+      <!-- Form Column -->
+      <div class="form-column">
+
+        <!-- Stepper Navigation -->
+        <div class="stepper-container">
+          <div class="stepper-nav">
+            <div class="step-tab active" data-step="1"><span class="step-tab-num">1</span> Personal</div>
+            <div class="step-tab" data-step="2"><span class="step-tab-num">2</span> Summary</div>
+            <div class="step-tab" data-step="3"><span class="step-tab-num">3</span> Education</div>
+            <div class="step-tab" data-step="4"><span class="step-tab-num">4</span> Experience</div>
+            <div class="step-tab" data-step="5"><span class="step-tab-num">5</span> Skills</div>
+            <div class="step-tab" data-step="6"><span class="step-tab-num">6</span> Languages</div>
+            <div class="step-tab" data-step="7"><span class="step-tab-num">7</span> Certifications</div>
+            <div class="step-tab" data-step="8"><span class="step-tab-num">8</span> Projects</div>
+            <div class="step-tab" data-step="9"><span class="step-tab-num">9</span> References</div>
+            <div class="step-tab" data-step="10"><span class="step-tab-num">10</span> Template</div>
+          </div>
+        </div>
+
+        <!-- AI Assistant Action Box -->
+        <div class="ai-assistant-box">
+          <div class="ai-assistant-header">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="ai-pill">✨ AI Resume Assistant</span>
+              <span style="font-size: 0.8rem; color: #64748b;">Targeted for your dream job</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #10b981; font-weight: 600;">🔒 Truthful AI — No Fake Credentials</div>
+          </div>
+          <div class="form-group" style="margin-bottom: 0.75rem;">
+            <label class="form-label" for="target-job-input">Target Job Title</label>
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="text" id="target-job-input" class="form-input" placeholder="e.g. CCTV Operator, Software Engineer, Project Manager" value="CCTV Operator">
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <button type="button" class="btn btn-sm btn-ai" id="ai-generate-summary-btn">✨ Generate Summary</button>
+            <button type="button" class="btn btn-sm btn-outline" id="ai-suggest-skills-btn">💡 Suggest Skills</button>
+            <button type="button" class="btn btn-sm btn-outline" id="ai-optimize-resume-btn">🎯 Check ATS Fit</button>
+          </div>
+        </div>
+
+        <!-- Step 1: Personal Information -->
+        <div class="step-content-section form-card" data-step="1">
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.35rem;">Step 1: Personal Information</h2>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Ensure your contact details are accurate so recruiters can reach you easily.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="personal-fullname">Full Name <span class="required">*</span></label>
+              <input type="text" id="personal-fullname" class="form-input" placeholder="e.g. Marcus Vance">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="personal-title">Professional Headline / Title <span class="required">*</span></label>
+              <input type="text" id="personal-title" class="form-input" placeholder="e.g. CCTV Operator & Security Specialist">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="personal-email">Email Address <span class="required">*</span></label>
+              <input type="email" id="personal-email" class="form-input" placeholder="e.g. name@example.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="personal-phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="personal-phone" class="form-input" placeholder="e.g. +1 (555) 019-2834">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="personal-city">City</label>
+              <input type="text" id="personal-city" class="form-input" placeholder="e.g. Chicago">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="personal-country">Country</label>
+              <input type="text" id="personal-country" class="form-input" placeholder="e.g. United States">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="personal-linkedin">LinkedIn Profile URL</label>
+              <input type="text" id="personal-linkedin" class="form-input" placeholder="e.g. linkedin.com/in/username">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="personal-website">Personal Website / Portfolio</label>
+              <input type="text" id="personal-website" class="form-input" placeholder="e.g. https://myportfolio.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="personal-photo">Profile Photo (Optional for standard ATS)</label>
+            <input type="file" id="personal-photo" class="form-input" accept="image/*">
+            <div class="form-help">Note: Most ATS parsers recommend omitting photos unless requested in specific countries.</div>
+          </div>
+        </div>
+
+        <!-- Step 2: Professional Summary -->
+        <div class="step-content-section form-card" data-step="2" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; flex-wrap: wrap;">
+            <h2 style="font-size: 1.35rem;">Step 2: Professional Summary</h2>
+            <button type="button" class="btn btn-sm btn-ai" onclick="document.getElementById('ai-generate-summary-btn').click();">✨ AI Generate</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">A brief 3-4 sentence elevator pitch highlighting your key strengths and readiness to deliver value.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="summary-text">Summary Text</label>
+            <textarea id="summary-text" class="form-textarea" style="min-height: 150px;" placeholder="Write or generate your professional summary..."></textarea>
+            <div class="form-help">Tip: Mention your years of experience, primary technical skills, and a quantifiable achievement.</div>
+          </div>
+        </div>
+
+        <!-- Step 3: Education -->
+        <div class="step-content-section form-card" data-step="3" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <h2 style="font-size: 1.35rem;">Step 3: Education</h2>
+            <button type="button" class="btn btn-sm btn-primary" onclick="ResumeApp.addEducationEntry()">+ Add Education</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">List your degrees, diplomas, high school, or vocational coursework in reverse-chronological order.</p>
+
+          <div id="education-entries-container"></div>
+        </div>
+
+        <!-- Step 4: Work Experience -->
+        <div class="step-content-section form-card" data-step="4" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <h2 style="font-size: 1.35rem;">Step 4: Work Experience</h2>
+            <button type="button" class="btn btn-sm btn-primary" onclick="ResumeApp.addExperienceEntry()">+ Add Work Experience</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Detail your roles and achievements. Use the AI button to improve bullet points with action verbs.</p>
+
+          <div id="experience-entries-container"></div>
+        </div>
+
+        <!-- Step 5: Skills -->
+        <div class="step-content-section form-card" data-step="5" style="display: none;">
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.35rem;">Step 5: Skills</h2>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Add targeted skills and keywords that match the job description you want to apply for.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="new-skill-input">Add Custom Skill</label>
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="text" id="new-skill-input" class="form-input" placeholder="Type a skill and press Enter or click Add">
+              <button type="button" class="btn btn-primary btn-sm" id="add-skill-btn">Add</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Suggested Skills for your role (Click to add):</label>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;" id="suggested-skills-list">
+              <button type="button" class="suggested-skill-btn">+ CCTV Surveillance</button>
+              <button type="button" class="suggested-skill-btn">+ Incident Reporting</button>
+              <button type="button" class="suggested-skill-btn">+ Video Management (VMS)</button>
+              <button type="button" class="suggested-skill-btn">+ Emergency Dispatch</button>
+              <button type="button" class="suggested-skill-btn">+ Threat Assessment</button>
+              <button type="button" class="suggested-skill-btn">+ Chain of Custody</button>
+              <button type="button" class="suggested-skill-btn">+ Access Control Systems</button>
+              <button type="button" class="suggested-skill-btn">+ Problem Solving</button>
+              <button type="button" class="suggested-skill-btn">+ Cross-Functional Teamwork</button>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label class="form-label">Active Skills on Resume:</label>
+            <div id="skills-cloud-container" class="skills-cloud"></div>
+          </div>
+        </div>
+
+        <!-- Step 6: Languages -->
+        <div class="step-content-section form-card" data-step="6" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <h2 style="font-size: 1.35rem;">Step 6: Languages</h2>
+            <button type="button" class="btn btn-sm btn-primary" onclick="ResumeApp.addLanguageEntry()">+ Add Language</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">List languages you speak and your level of proficiency.</p>
+
+          <div id="languages-container"></div>
+        </div>
+
+        <!-- Step 7: Certifications -->
+        <div class="step-content-section form-card" data-step="7" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <h2 style="font-size: 1.35rem;">Step 7: Certifications & Licenses</h2>
+            <button type="button" class="btn btn-sm btn-primary" onclick="ResumeApp.addCertificationEntry()">+ Add Certification</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Add professional certifications, security credentials, state licenses, or technical badges.</p>
+
+          <div id="certifications-container"></div>
+        </div>
+
+        <!-- Step 8: Projects -->
+        <div class="step-content-section form-card" data-step="8" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <h2 style="font-size: 1.35rem;">Step 8: Projects</h2>
+            <button type="button" class="btn btn-sm btn-primary" onclick="ResumeApp.addProjectEntry()">+ Add Project</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Highlight key academic, open source, or workplace initiatives and technological solutions.</p>
+
+          <div id="projects-container"></div>
+        </div>
+
+        <!-- Step 9: References -->
+        <div class="step-content-section form-card" data-step="9" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <h2 style="font-size: 1.35rem;">Step 9: References (Optional)</h2>
+            <button type="button" class="btn btn-sm btn-primary" onclick="ResumeApp.addReferenceEntry()">+ Add Reference</button>
+          </div>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">You may add references or simply state "Available upon request" according to job requirements.</p>
+
+          <div id="references-container"></div>
+        </div>
+
+        <!-- Step 10: Choose Template -->
+        <div class="step-content-section form-card" data-step="10" style="display: none;">
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.35rem;">Step 10: Choose Your ATS Template</h2>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Pick from our 5 recruiter-approved templates. Your data adapts automatically.</p>
+
+          <div class="grid grid-2" style="gap: 1rem;">
+            <div class="template-card-choice" onclick="ResumeApp.setTemplate('classic')" style="cursor: pointer; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #ffffff;">
+              <h4 style="margin-bottom: 0.25rem;">Classic Professional</h4>
+              <p style="font-size: 0.8rem; color: #64748b;">Centered header with refined divider rules. Universally trusted by Fortune 500 recruiters.</p>
+            </div>
+
+            <div class="template-card-choice" onclick="ResumeApp.setTemplate('modern')" style="cursor: pointer; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #ffffff;">
+              <h4 style="margin-bottom: 0.25rem;">Modern Professional</h4>
+              <p style="font-size: 0.8rem; color: #64748b;">Bold left colored accent with modern sans-serif typography. Excellent for tech & operations.</p>
+            </div>
+
+            <div class="template-card-choice" onclick="ResumeApp.setTemplate('minimal')" style="cursor: pointer; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #ffffff;">
+              <h4 style="margin-bottom: 0.25rem;">Minimal ATS</h4>
+              <p style="font-size: 0.8rem; color: #64748b;">Ultra-clean monochrome standard. Built for strict government and enterprise parsing bots.</p>
+            </div>
+
+            <div class="template-card-choice" onclick="ResumeApp.setTemplate('executive')" style="cursor: pointer; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #ffffff;">
+              <h4 style="margin-bottom: 0.25rem;">Executive</h4>
+              <p style="font-size: 0.8rem; color: #64748b;">Dark navy header bar with authoritative typography for management and team leads.</p>
+            </div>
+
+            <div class="template-card-choice" onclick="ResumeApp.setTemplate('graduate')" style="cursor: pointer; border: 2px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #ffffff;">
+              <h4 style="margin-bottom: 0.25rem;">Fresh Graduate</h4>
+              <p style="font-size: 0.8rem; color: #64748b;">Spotlights university education, coursework, and projects ahead of work experience.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stepper Controller Buttons -->
+        <div class="builder-actions">
+          <button type="button" class="btn btn-outline" id="step-prev-btn" style="visibility: hidden;">← Previous</button>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="button" class="btn btn-outline btn-sm" onclick="ResumeApp.saveToStorage()">💾 Save Resume</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="ResumeApp.resetResume()">Clear</button>
+          </div>
+          <button type="button" class="btn btn-primary" id="step-next-btn">Next Step →</button>
+        </div>
+
+      </div>
+
+      <!-- Live Preview Column (Sticky on Desktop) -->
+      <aside class="preview-panel" aria-label="Resume Preview">
+        <div class="preview-toolbar">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">Live Preview</span>
+            <select id="template-selector" class="form-select" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; width: auto;">
+              <option value="classic">Classic Professional</option>
+              <option value="modern">Modern Professional</option>
+              <option value="minimal">Minimal ATS</option>
+              <option value="executive">Executive</option>
+              <option value="graduate">Fresh Graduate</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm download-pdf-btn">📥 Download PDF</button>
+        </div>
+
+        <div class="preview-canvas-container">
+          <div id="resume-preview-sheet" class="resume-sheet template-classic">
+            <!-- Dynamically populated by /js/resume.js -->
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 ResumeAI Pro. All drafts saved locally in your browser.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+          <a href="/contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/ai.js"></script>
+  <script src="/js/resume.js"></script>
+  <script src="/js/pdf.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ResumeApp.init();
+
+      // Hook up Skill Adder
+      const skillInput = document.getElementById('new-skill-input');
+      const addSkillBtn = document.getElementById('add-skill-btn');
+      if (skillInput && addSkillBtn) {
+        addSkillBtn.addEventListener('click', () => {
+          ResumeApp.addSkill(skillInput.value);
+          skillInput.value = '';
+        });
+        skillInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            ResumeApp.addSkill(skillInput.value);
+            skillInput.value = '';
+          }
+        });
+      }
+
+      // Hook up Suggested Skills buttons
+      document.querySelectorAll('.suggested-skill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.textContent.replace(/^\+\s*/, '');
+          ResumeApp.addSkill(text);
+        });
+      });
+
+      // Hook up Load Sample Button
+      const sampleBtn = document.getElementById('load-sample-btn');
+      if (sampleBtn) {
+        sampleBtn.addEventListener('click', () => {
+          ResumeApp.loadPreset('cctv');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
